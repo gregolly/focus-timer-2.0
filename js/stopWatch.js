@@ -1,4 +1,4 @@
-import { stopWatchState } from './utils/variables.js'
+import { stopWatchState } from '../utils/variables.js'
 import { minutesDisplay, secondsDisplay } from './elements.js'
 
 export let timerTimeOut;
