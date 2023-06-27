@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" 
+    rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus timer 2.0</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="body">
+    <form class="form">
+        <input type="text" placeholder="Digite os minutos" class="input-minutes">
+        <input type="text" placeholder="Digite os segundos" class="input-seconds">
+        <input type="submit" value="Enviar">
+    </form>
+    <main class="main">
+        <div class="timer">
+            <div class="wrapper-time">
+                <div class="minutes">00</div>
+                <div class="separator">:</div>
+                <div class="seconds">00</div>
+            </div>
+            <div class="controls">
+                <button class="play"></button>
+                <button class="pause"></button>
+                <button class="stop"></button>
+                <button class="add"></button>
+                <button class="minus"></button>
+            </div>
+        </div>
+        <div class="sounds">
+            <button class="wrapper-sound tree"></button>
+            <button class="wrapper-sound cloud"></button>
+            <button class="wrapper-sound store"></button>
+            <button class="wrapper-sound fire"></button>
+        </div>
+    </main>
+
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
