@@ -6,6 +6,8 @@ import { handleOnClickAdd } from './handleOnClickAdd.js'
 import { handleOnClickDecrement } from './handleOnClickDecrement.js'
 import Sound from './sounds.js'
 
+import Controls from './control.js'
+
 import { 
     playIcon, 
     stopIcon, 
@@ -15,7 +17,9 @@ import {
     treeIcon,
     cloudIcon,
     storeIcon,
-    fireIcon
+    fireIcon,
+    lightIcon,
+    darkIcon
 } from './icons.js'
 
 import { 
@@ -29,10 +33,50 @@ import {
     store,
     fire,
     form,
-    buttonsSound
+    buttonsSound,
+    buttonLight,
+    buttonDark,
+    minutesDisplay,
+    secondsDisplay,
+    separator,
+    wrapperSound,
 } from './elements.js'
 
 const sound = Sound()
+const controls = Controls({
+    buttonLight,
+    buttonDark,
+    buttonAdd,
+    buttonMinus,
+    minutesDisplay,
+    secondsDisplay,
+    separator,
+    buttonPause,
+    buttonPlay,
+    buttonStop,
+    buttonLight,
+    buttonDark,
+    minutesDisplay,
+    secondsDisplay,
+    separator,
+    playIcon,
+    stopIcon,
+    pauseIcon,
+    plusCircleIcon,
+    minusCircleIcon,
+    lightIcon,
+    darkIcon,
+    wrapperSound,
+    cloudIcon, 
+    fireIcon, 
+    storeIcon, 
+    treeIcon,
+    buttonsSound,
+    tree,
+    cloud,
+    store,
+    fire
+})
 
 buttonPlay ? buttonPlay.innerHTML = playIcon.outerHTML : ''
 buttonPause ? buttonPause.innerHTML = pauseIcon.outerHTML : ''
@@ -43,8 +87,11 @@ tree ? tree.innerHTML = treeIcon.outerHTML : ''
 cloud ? cloud.innerHTML = cloudIcon.outerHTML : ''
 store ? store.innerHTML = storeIcon.outerHTML : ''
 fire ? fire.innerHTML = fireIcon.outerHTML : ''
+buttonLight ? buttonLight.innerHTML = lightIcon.outerHTML : ''
+buttonDark ? buttonDark.innerHTML = darkIcon.outerHTML : ''
 
 buttonPause.classList.add('hide')
+buttonDark.classList.add('hide')
 form.addEventListener('submit', handleSubmitForm)
 buttonPlay.addEventListener('click', handleOnClickPlay)
 buttonStop.addEventListener('click', handleOnClickStop)
@@ -59,6 +106,7 @@ buttonsSound.forEach(button => {
         button.classList.add('active')
     })
 })
+
 tree.addEventListener('click', () => {
     sound.pressButtonWood()
 })
@@ -70,4 +118,11 @@ store.addEventListener('click', () => {
 })
 fire.addEventListener('click', () => {
     sound.pressButtonFirePlace()
+})
+buttonLight.addEventListener('click', () => {
+    controls.changeTheme('light')
+
+})
+buttonDark.addEventListener('click', () => {
+    controls.changeTheme('dark')
 })
