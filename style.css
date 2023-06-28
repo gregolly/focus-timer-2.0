@@ -10,8 +10,31 @@ button {
     cursor: pointer;
 }
 
+.float {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+
 .hide {
     display: none;
+}
+
+.dark-theme-bg {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.wrapper-bg {
+    background-color: #29292E !important;
+}
+
+.dark-theme-font {
+    color: #fff;
+}
+
+.dark-theme-icon {
+    fill: #fff !important;
 }
 
 .body {
@@ -20,6 +43,7 @@ button {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    position: relative;
 }
 
 .main {
@@ -29,7 +53,7 @@ button {
 }
 
 .form {
-    margin-bottom: 24px;
+    margin-bottom: 80px;
 }
 
 .active {
