@@ -4,6 +4,7 @@ import { handleOnClickStop } from './handleOnClickStop.js'
 import { handleOnClickPause } from './handleOnClickPause.js'
 import { handleOnClickAdd } from './handleOnClickAdd.js'
 import { handleOnClickDecrement } from './handleOnClickDecrement.js'
+import { createInputRange } from './createInputRange.js'
 import Sound from './sounds.js'
 
 import Controls from './control.js'
@@ -126,3 +127,24 @@ buttonLight.addEventListener('click', () => {
 buttonDark.addEventListener('click', () => {
     controls.changeTheme('dark')
 })
+
+
+const treeInputRange = createInputRange()
+tree.appendChild(treeInputRange)
+const minSoundWood = sound.wood.volume * 100 / 10
+const maxSoundWood = sound.wood.volume * 100
+treeInputRange.setAttribute('min', minSoundWood.toString())
+treeInputRange.setAttribute('max', maxSoundWood.toString())
+treeInputRange.addEventListener('input', () => {
+    const volume = parseFloat(treeInputRange.value) / 100;
+    sound.wood.volume = volume
+})
+
+const cloudInputRange = createInputRange()
+cloud.appendChild(cloudInputRange)
+
+const storeInputRange = createInputRange()
+store.appendChild(storeInputRange)
+
+const fireInputRange = createInputRange()
+fire.appendChild(fireInputRange)
