@@ -10,7 +10,6 @@ export default function() {
         rain.pause()
         coffeeShop.pause()
         firePlace.pause()
-        wood.volume = 0.5
     }
 
     function pressButtonRain(){
@@ -19,7 +18,6 @@ export default function() {
         wood.pause()
         firePlace.pause()
         coffeeShop.pause()
-        rain.volume = 0.5
     }
 
     function pressButtonCoffeeShop() {
@@ -28,7 +26,6 @@ export default function() {
         wood.pause()
         rain.pause()
         firePlace.pause()
-        coffeeShop.volume = 0.5
     }
 
     function pressButtonFirePlace() {
@@ -37,7 +34,6 @@ export default function() {
         wood.pause()
         firePlace.pause()
         rain.pause()
-        firePlace.volume = 0.5
     }
 
     return {

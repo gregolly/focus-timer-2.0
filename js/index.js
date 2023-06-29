@@ -131,10 +131,8 @@ buttonDark.addEventListener('click', () => {
 
 const treeInputRange = createInputRange()
 tree.appendChild(treeInputRange)
-const minSoundWood = sound.wood.volume * 100 / 10
-const maxSoundWood = sound.wood.volume * 100
-treeInputRange.setAttribute('min', minSoundWood.toString())
-treeInputRange.setAttribute('max', maxSoundWood.toString())
+treeInputRange.setAttribute('min', '10')
+treeInputRange.setAttribute('max', '100')
 treeInputRange.addEventListener('input', () => {
     const volume = parseFloat(treeInputRange.value) / 100;
     sound.wood.volume = volume
@@ -142,9 +140,27 @@ treeInputRange.addEventListener('input', () => {
 
 const cloudInputRange = createInputRange()
 cloud.appendChild(cloudInputRange)
+cloudInputRange.setAttribute('min', '10')
+cloudInputRange.setAttribute('max', '100')
+cloudInputRange.addEventListener('input', () => {
+    const volume = parseFloat(cloudInputRange.value) / 100;
+    sound.rain.volume = volume
+})
 
 const storeInputRange = createInputRange()
 store.appendChild(storeInputRange)
+storeInputRange.setAttribute('min', '10')
+storeInputRange.setAttribute('max', '100')
+storeInputRange.addEventListener('input', () => {
+    const volume = parseFloat(storeInputRange.value) / 100;
+    sound.coffeeShop.volume = volume
+})
 
 const fireInputRange = createInputRange()
 fire.appendChild(fireInputRange)
+fireInputRange.setAttribute('min', '10')
+fireInputRange.setAttribute('max', '100')
+fireInputRange.addEventListener('input', () => {
+    const volume = parseFloat(fireInputRange.value) / 100;
+    sound.firePlace.volume = volume
+})
